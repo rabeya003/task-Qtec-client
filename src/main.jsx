@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import "rsuite/dist/rsuite.min.css";
 import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Routes/Router";
