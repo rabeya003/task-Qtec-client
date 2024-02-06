@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 const EditTask = () => {
   const [Tasks, setTasks] = useState({});
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Function to fetch data from the server
@@ -52,8 +53,8 @@ const EditTask = () => {
             icon: "success",
             confirmButtonText: "Cool",
           });
+          navigate("/lists");
         }
-        e.target.reset();
       });
   };
   return (
@@ -62,7 +63,7 @@ const EditTask = () => {
         <div>
           <div className="flex justify-center items-center gap-3">
             {" "}
-            <h3 className="text-5xl text-center font-extrabold font-rancho">
+            <h3 className="text-lg md:text-5xl text-center font-extrabold font-rancho">
               Edit your Task
             </h3>
             <img
