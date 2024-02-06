@@ -5,6 +5,7 @@ import ErrorPage from "../Components/ErrorPage";
 import Home from "../Components/Home";
 import Addtask from "../Components/Addtask";
 import EditTask from "../Components/EditTask";
+import AllLists from "../Components/AllLists";
 
 export const router = createBrowserRouter([
   {
@@ -21,8 +22,12 @@ export const router = createBrowserRouter([
         element: <Addtask></Addtask>,
       },
       {
-        path: "edit",
+        path: "/edit/:id",
         element: <EditTask></EditTask>,
+      },
+      {
+        path: "/lists",
+        element: <AllLists></AllLists>,
       },
     ],
   },
