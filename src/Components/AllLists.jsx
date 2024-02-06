@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AllLists = () => {
@@ -8,18 +9,12 @@ const AllLists = () => {
     // Function to fetch data from the server
     const fetchData = async () => {
       try {
-        // Make a fetch request
         const response = await fetch("http://localhost:5000/task");
 
-        // Check if request was successful
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
-
-        // Parse the response as JSON
         const jsonData = await response.json();
-
-        // Update state with fetched data
         setTasks(jsonData);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -69,7 +64,7 @@ const AllLists = () => {
           <table className="table">
             {/* head */}
             <thead>
-              <tr>
+              <tr className="text-center">
                 <th>ID</th>
                 <th>Task-Name</th>
                 <th>Priority</th>
@@ -79,19 +74,27 @@ const AllLists = () => {
             </thead>
             <tbody>
               {Tasks.map((task, index) => (
-                <tr key={task._id}>
+                <tr className="text-center" key={task._id}>
                   <th>{index + 1}</th>
                   <td>{task.name}</td>
                   <td>{task.priority}</td>
                   <td>{task.date}</td>
 
                   <td>
-                    <butttaskon
-                      className="bg-red-700 hover:bg-red-800 py-2 px-2 text-white"
+                    <Link to={`/edit/${task._id}`}>
+                      {" "}
+                      <button className="bg-blue-700 rounded-lg mr-2 hover:bg-blue-800 py-2 px-2 text-white">
+                        Edit
+                      </button>
+                    </Link>
+                    {/* </td>
+                  <td> */}
+                    <button
+                      className="bg-red-700 rounded-lg hover:bg-red-800 py-2 px-2 text-white"
                       onClick={() => handleDelete(task._id)}
                     >
-                      X
-                    </butttaskon>
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}
