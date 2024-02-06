@@ -24,7 +24,7 @@ const Header = () => {
               : "bg-white p-3"
           }
         >
-          All Lists
+          All-Lists
         </NavLink>
       </li>
       <li>
@@ -36,14 +36,14 @@ const Header = () => {
               : "bg-white p-3"
           }
         >
-          Add
+          Add-Tasks
         </NavLink>
       </li>
     </>
   );
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -77,24 +77,6 @@ const Header = () => {
             {/* Navigation links */}
             {nav}
           </ul>
-        </div>
-        <div className="navbar-end">
-          {user?.email ? (
-            <div className="flex items-center">
-              <img
-                className="rounded-full mr-3 w-16 h-16 lg:w-16 lg:h-16"
-                src={
-                  users
-                    ? users.find((u) => u.email === user.email)?.image ||
-                      user?.photoURL
-                    : user?.photoURL
-                }
-                alt=""
-              />
-            </div>
-          ) : (
-            <></>
-          )}
         </div>
       </div>
     </div>
