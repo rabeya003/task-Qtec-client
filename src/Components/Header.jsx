@@ -69,7 +69,7 @@ const Header = () => {
             </ul>
           </div>
           <Link to="/">
-            <p className="text-xl font-bold">TaskMaster</p>
+            <p className="text-xl font-bold">ToDo List</p>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

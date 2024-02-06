@@ -19,9 +19,9 @@ const Banner = () => {
               loop={0}
               typeSpeed={75}
               words={[
-                "Welcome to Task Master",
+                "Welcome to ToDo List",
                 "Save your tasks and",
-                "enjoy our amazing features",
+                "enjoy our features",
               ]}
             />
           </h1>

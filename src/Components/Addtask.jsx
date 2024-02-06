@@ -1,5 +1,5 @@
 const Addtask = () => {
-  return <div>Addtask</div>;
+  return <div className="h-screen max-w-7xl mx-auto">Addtask</div>;
 };
 
 export default Addtask;

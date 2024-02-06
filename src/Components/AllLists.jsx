@@ -1,5 +1,5 @@
 const AllLists = () => {
-  return <div>All the lists</div>;
+  return <div className="h-screen max-w-7xl mx-auto">All the lists</div>;
 };
 
 export default AllLists;
