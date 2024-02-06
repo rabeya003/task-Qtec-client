@@ -1,4 +1,3 @@
-import { DatePicker, Stack } from "rsuite";
 import Swal from "sweetalert2";
 const Addtask = () => {
   const handleAddtask = (e) => {
@@ -8,7 +7,6 @@ const Addtask = () => {
     const date = form.date.value;
     const priority = form.priority.value;
     const newTask = { name, date, priority };
-
     console.log(newTask);
     // // Send data to the server
     fetch("http://localhost:5000/task", {
@@ -73,7 +71,12 @@ const Addtask = () => {
               </label>
 
               {/* <DatePicker name="date" format="dd.MM.yyyy" /> */}
-              <input className="p-3 rounded-lg" type="date" name="date" />
+              <input
+                className="p-3 rounded-lg"
+                type="date"
+                required
+                name="date"
+              />
             </div>
             <div className="form-control w-full">
               <label className="label">
@@ -82,6 +85,7 @@ const Addtask = () => {
               <label className="input-group">
                 <select
                   name="priority"
+                  required
                   className="w-full p-3 rounded-lg outline-none"
                   id=""
                 >
