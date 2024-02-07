@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 const EditTask = () => {
-  const [Tasks, setTasks] = useState({});
+  const [Tasks, setTasks] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -17,6 +17,7 @@ const EditTask = () => {
         }
         const jsonData = await response.json();
         setTasks(jsonData);
+        console.log(jsonData);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -129,7 +130,7 @@ const EditTask = () => {
           {/* Submit button */}
           <input
             type="submit"
-            value="Add Task"
+            value="Update Task"
             className="mt-4 btn btn-block bg-[#B55EEA] hover:bg-[#382147] text-white"
           />
         </form>
