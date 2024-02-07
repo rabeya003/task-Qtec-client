@@ -96,6 +96,11 @@ const AllLists = () => {
     }
   };
 
+  const totalTasks = Tasks.length;
+  const completedTasks = Tasks.filter(
+    (task) => task.status === "completed"
+  ).length;
+
   return (
     <div className="h-screen max-w-7xl mx-auto my-12">
       <div className="mb-4">
@@ -113,6 +118,12 @@ const AllLists = () => {
           <option value="Medium">Medium</option>
           <option value="Low">Low</option>
         </select>
+      </div>
+      <div className="flex justify-between mb-4">
+        <div>
+          <p>Total Tasks: {totalTasks}</p>
+          <p>Completed Tasks: {completedTasks}</p>
+        </div>
       </div>
       <div className="overflow-x-auto">
         <table className="table">
